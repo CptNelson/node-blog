@@ -1,0 +1,46 @@
+@layout('layouts.app')
+ 
+@section('content')
+
+<!-- Header -->
+
+<header>
+    <h1>Create New Post</h1>
+</header>
+
+<div class="container">
+  <div>
+    <div>
+      <form action="/posts/store" method="POST">
+        <div>
+          <div>
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Username">
+          </div>
+        </div>
+        <div>
+          <div>
+            <label>Title</label>
+            <input type="text" name="title" placeholder="Title">
+          </div>
+        </div>
+        <div>
+          <div>
+            <label>Description</label>
+            <input type="text" name="description" placeholder="Description">
+          </div>
+        </div>
+        <div>
+          <div>
+            <label>Content</label>
+            <textarea name="content" placeholder="Content ..." cols="30" rows="10" ></textarea>
+          </div>
+        </div>
+        <div>
+          <button class="btn">Create Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+@endsection
