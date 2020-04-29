@@ -7,23 +7,25 @@ const fileUpload = require("express-fileupload");
 const expressSession = require("express-session");
 const connectMongo = require("connect-mongo");
 
+// === CONTROLLERS ===
+
 const createPostController = require("./controllers/createPost");
-const homePageController = require("./controllers/homePage");
-const storePostController = require("./controllers/storePost");
+const mainPageController = require("./controllers/mainPage");
+const savePostController = require("./controllers/savePost");
 const getPostController = require("./controllers/getPost");
 const createUserController = require("./controllers/createUser");
-const storeUserController = require("./controllers/storeUser");
+const saveUserController = require("./controllers/saveUser");
 const loginController = require("./controllers/login");
 const loginUserController = require("./controllers/loginUser");
 const logoutController = require("./controllers/logout");
 
 const app = new express();
 
-app.use(
+/* app.use(
   expressSession({
     secret: "secret",
   }),
-);
+);*/
 
 mongoose
   .connect("mongodb://localhost:27017/node-blog", { useNewUrlParser: true })
@@ -54,20 +56,22 @@ app.use("*", (req, res, next) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const storePost = require("./middleware/storePost");
+// === MIDDLEWARE ===
+
+const savePost = require("./middleware/savePost");
 const auth = require("./middleware/auth");
 const redirectIfAuthenticated = require("./middleware/redirectIfAuthenticated");
 
-app.use("/posts/store", storePost);
+app.use("/posts/save", savePost);
 
-app.get("/", homePageController);
+app.get("/", mainPageController);
 app.get("/post/:id", getPostController);
 app.get("/posts/new", auth, createPostController);
-app.post("/posts/store", auth, storePost, storePostController);
+app.post("/posts/save", auth, savePost, savePostController);
 app.get("/auth/login", redirectIfAuthenticated, loginController);
 app.post("/users/login", redirectIfAuthenticated, loginUserController);
 app.get("/auth/register", redirectIfAuthenticated, createUserController);
-app.post("/users/register", redirectIfAuthenticated, storeUserController);
+app.post("/users/register", redirectIfAuthenticated, saveUserController);
 app.get("/auth/logout", redirectIfAuthenticated, logoutController);
 
 app.listen(4000, () => {
