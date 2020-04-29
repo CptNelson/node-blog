@@ -1,0 +1,80 @@
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-black: #000;
+$color-white: #fff;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 2rem;
+}
+
+.header {
+  height: 15vh;
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  position: relative;
+
+  &__nav-box {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation-name: fadeIn;
+  animation-duration: 2s;
+
+  &--main {
+    display: block;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 3rem;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 1.2rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

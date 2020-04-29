@@ -16,17 +16,17 @@
 
     <header class="header">
       <h1 class="heading-primary">
-        <span class="heading-primary-main">blog</span>
-        <span class="heading-primary-sub">something</span>
+        <span class="heading-primary--main">blog</span>
+        <span class="heading-primary--sub">something</span>
       </h1>
 
-      <div class="nav-box">
+      <div class="header__nav-box">
           <a class="nav-link" href="/">Home</a>
 
-      @if(!auth)
+        @if(!auth)
           <a class="nav-link" href="/auth/login">Login</a>
           <a class="nav-link" href="/auth/register">Register</a>
-      @endif
+        @endif
       </div> 
     </header>
 
