@@ -3,32 +3,19 @@
 @section('content')
 
 <!-- Page Header -->
-    <header style="background-image: url('{{ post.image }}')">
-      <div>
-        <div>
-          <div>
-            <div>
-              <h1>{{ post.title }}</h1>
-              <span>Posted by
-                <a href="#">{{ post.username }}</a>
-                on {{ post.createdAt.toDateString() }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
- 
+<div class="posts">
+  <div class="post">
+    <h1 class="post--title">{{ post.title }}</h1>
+    <span class="post--meta">Posted by
+      <a href="#">{{ post.username }}</a>
+      on {{ post.createdAt.toDateString() }}
+    </span>
     <!-- Post Content -->
-    <article>
-      <div >
-        <div >
-          <div >
-            {{ post.content }}
-          </div>
-        </div>
-      </div>
+    <article class="post--content">
+    {{ post.content }}
     </article>
- 
     <hr>
+  </div>
+</div>
+ 
 @endsection

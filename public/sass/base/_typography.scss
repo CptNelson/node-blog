@@ -1,0 +1,38 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 2rem;
+    max-width: $grid-width;
+    margin: 0 auto;
+}
+
+.heading-primary {
+
+    color: #fff;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    animation-name: fadeIn;
+    animation-duration: 2s;
+
+    &--main {
+        display: block;
+        font-size: 4rem;
+        font-weight: 400;
+        letter-spacing: 3rem;
+    }
+
+    &--sub {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 400;
+        letter-spacing: 1.2rem;
+    }
+}

@@ -1,0 +1,13 @@
+.header {
+    height: 15vh;
+    background-image: linear-gradient(to right,
+            $color-primary-light,
+            $color-primary-dark);
+    position: relative;
+
+    &__nav-box {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+}
