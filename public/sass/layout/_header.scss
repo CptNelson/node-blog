@@ -5,6 +5,11 @@
             $color-primary-dark);
     position: relative;
 
+
+    @include respond(phone) {
+        height: 10vh;
+    }
+
     &__nav-box {
         position: absolute;
         top: 1rem;

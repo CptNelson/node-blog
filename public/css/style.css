@@ -1,3 +1,16 @@
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+1200 - 1800px:  Normal style (desktop)
+1800px -> :     Big Desktop
+USE EMS FOR MEDIA QUERIES! 1em = 16px
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- desk-big
+*/
 @keyframes fadeIn {
   0% {
     opacity: 0; }
@@ -13,9 +26,21 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: "Lato", sans-serif;
@@ -27,11 +52,22 @@ body {
   max-width: 114rem;
   margin: 0 auto; }
 
+a:link {
+  text-decoration: none;
+  color: black; }
+
+a:visited {
+  text-decoration: none;
+  color: black; }
+
+a:hover {
+  color: darkgreen; }
+
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   animation-name: fadeIn;
@@ -41,16 +77,27 @@ body {
     font-size: 4rem;
     font-weight: 400;
     letter-spacing: 3rem; }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        font-size: 3rem;
+        letter-spacing: 1rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 1.2rem; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        font-size: 1rem;
+        letter-spacing: 0.6rem; } }
 
 .header {
   height: 15vh;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   position: relative; }
+  @media (max-width: 37.5em) {
+    .header {
+      height: 10vh; } }
   .header__nav-box {
     position: absolute;
     top: 1rem;

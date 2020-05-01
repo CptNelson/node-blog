@@ -9,24 +9,44 @@ body {
     margin: 0 auto;
 }
 
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: darkgreen;
+}
+
 .heading-primary {
 
     color: #fff;
     text-transform: uppercase;
 
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     animation-name: fadeIn;
     animation-duration: 2s;
 
+
     &--main {
         display: block;
         font-size: 4rem;
         font-weight: 400;
         letter-spacing: 3rem;
+
+        @include respond(phone) {
+            font-size: 3rem;
+            letter-spacing: 1rem;
+        }
     }
 
     &--sub {
@@ -34,5 +54,10 @@ body {
         font-size: 1.6rem;
         font-weight: 400;
         letter-spacing: 1.2rem;
+
+        @include respond(phone) {
+            font-size: 1rem;
+            letter-spacing: 0.6rem;
+        }
     }
 }
