@@ -4,47 +4,50 @@
 
 <!-- Header -->
 
+
+<div class="container">
 <header>
     <h1>Create New Post</h1>
 </header>
-
-<div class="container">
-  <div>
-    <div>
-     <form action="/posts/store" method="POST" encType="multipart/form-data">
-      
-        <div>
-          <div>
+     <form action="/posts/save" method="POST" encType="multipart/form-data">
+      <div class="row">
+          <div class="col-25">
             <label>Username</label>
+          </div>
+          <div class="col-75">
             <input type="text" name="username" placeholder="Username">
           </div>
-        </div>
-        <div>
-          <div>
+      </div>
+      <div class="row">
+        <div class="col-25">
             <label>Title</label>
+        </div>
+        <div class="col-75">
             <input type="text" name="title" placeholder="Title">
-          </div>
         </div>
-        <div>
-          <div>
-            <label>Description</label>
+       </div>
+      <div class="row">
+        <div class="col-25">
+            <label>Descriptio</label>
+        </div>
+        <div class="col-75">
             <input type="text" name="description" placeholder="Description">
-          </div>
         </div>
-        <div>
-          <div>
+        </div>
+        <div class="row">
+          <div class="col-25">
             <label>Content</label>
+          </div>
+          <div class="col-75">
             <textarea name="content" placeholder="Content ..." cols="30" rows="10" ></textarea>
           </div>
         </div>
-                <div class="form-group mt-3">
-          <input type="file" name="image" class="form-control-file">
+        <div>
+          <input type="file" name="image">
         </div>
         <div>
           <button class="btn">Create Post</button>
         </div>
       </form>
-    </div>
-  </div>
 </div>
 @endsection

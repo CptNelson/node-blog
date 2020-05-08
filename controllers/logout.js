@@ -1,5 +1,9 @@
 module.exports = (req, res, next) => {
-  req.session.destroy(() => {
+  console.log("asdd");
+  console.log(req);
+  console.log(res);
+  req.session.destroy((err) => {
     res.redirect("/");
   });
+  req.session = null;
 };

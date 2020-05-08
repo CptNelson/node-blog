@@ -21,11 +21,11 @@ const logoutController = require("./controllers/logout");
 
 const app = new express();
 
-/* app.use(
+app.use(
   expressSession({
     secret: "secret",
   }),
-);*/
+);
 
 mongoose
   .connect("mongodb://localhost:27017/node-blog", { useNewUrlParser: true })
@@ -37,8 +37,10 @@ const mongoStore = connectMongo(expressSession);
 app.use(
   expressSession({
     secret: "secret",
+    saveUninitialized: true,
     store: new mongoStore({
       mongooseConnection: mongoose.connection,
+      saveUninitialized: true,
     }),
   }),
 );
@@ -72,7 +74,7 @@ app.get("/auth/login", redirectIfAuthenticated, loginController);
 app.post("/users/login", redirectIfAuthenticated, loginUserController);
 app.get("/auth/register", redirectIfAuthenticated, createUserController);
 app.post("/users/register", redirectIfAuthenticated, saveUserController);
-app.get("/auth/logout", redirectIfAuthenticated, logoutController);
+app.get("/auth/logout", logoutController);
 
 app.listen(4000, () => {
   console.log("App listening on port 4000");

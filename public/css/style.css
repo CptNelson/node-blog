@@ -91,6 +91,26 @@ a:hover {
         font-size: 1rem;
         letter-spacing: 0.6rem; } }
 
+.container {
+  border-radius: .5rem;
+  background-color: #f2f2f2;
+  padding: 2rem; }
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: .6rem; }
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: .6rem; }
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
 .header {
   height: 15vh;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
@@ -106,14 +126,19 @@ a:hover {
 .posts {
   max-width: 114rem;
   margin: 0 auto;
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem;
+  background-color: #f2f2f2;
+  padding-left: 1rem;
+  padding-right: 1rem; }
 
-.post:not(:last-child) {
-  margin-bottom: 4rem; }
-
-.post--meta {
-  font-size: 1.4rem;
-  font-style: italic; }
-
-.post--content {
-  margin-top: 1rem; }
+.post {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #f2f2f2; }
+  .post:not(:last-child) {
+    margin-bottom: 4rem; }
+  .post--meta {
+    font-size: 1.4rem;
+    font-style: italic; }
+  .post--content {
+    margin-top: 1rem; }
