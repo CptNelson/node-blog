@@ -93,7 +93,7 @@ a:hover {
 
 .container {
   border-radius: .5rem;
-  background-color: #f2f2f2;
+  background-color: #fff;
   padding: 2rem; }
 
 .col-25 {
@@ -127,14 +127,14 @@ a:hover {
   max-width: 114rem;
   margin: 0 auto;
   margin-bottom: 4rem;
-  background-color: #f2f2f2;
+  background-color: #fff;
   padding-left: 1rem;
   padding-right: 1rem; }
 
 .post {
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #f2f2f2; }
+  background-color: #fff; }
   .post:not(:last-child) {
     margin-bottom: 4rem; }
   .post--meta {

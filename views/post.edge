@@ -16,6 +16,16 @@
     </article>
     <hr>
   </div>
+  @if(auth)
+  <div>
+    <a href="/delete/{{ post._id }}">
+      <button>Delete post</button>
+    </a>
+    <a href="/update/{{ post._id }}">
+      <button>Edit post</button>
+    </a>
+  </div>
+  @endif
 </div>
  
 @endsection

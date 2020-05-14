@@ -12,12 +12,17 @@ const connectMongo = require("connect-mongo");
 const createPostController = require("./controllers/createPost");
 const mainPageController = require("./controllers/mainPage");
 const savePostController = require("./controllers/savePost");
+const editPostController = require("./controllers/editPost");
+const saveEditPostController = require("./controllers/saveEditPost");
 const getPostController = require("./controllers/getPost");
+const deletePostController = require("./controllers/deletePost");
 const createUserController = require("./controllers/createUser");
 const saveUserController = require("./controllers/saveUser");
 const loginController = require("./controllers/login");
 const loginUserController = require("./controllers/loginUser");
 const logoutController = require("./controllers/logout");
+
+// =====================
 
 const app = new express();
 
@@ -64,12 +69,17 @@ const savePost = require("./middleware/savePost");
 const auth = require("./middleware/auth");
 const redirectIfAuthenticated = require("./middleware/redirectIfAuthenticated");
 
+// =====================
+
 app.use("/posts/save", savePost);
 
 app.get("/", mainPageController);
 app.get("/post/:id", getPostController);
 app.get("/posts/new", auth, createPostController);
+app.get("/update/:id", auth, editPostController);
+app.post("/edit/:id", auth, saveEditPostController);
 app.post("/posts/save", auth, savePost, savePostController);
+app.get("/delete/:id", auth, deletePostController);
 app.get("/auth/login", redirectIfAuthenticated, loginController);
 app.post("/users/login", redirectIfAuthenticated, loginUserController);
 app.get("/auth/register", redirectIfAuthenticated, createUserController);

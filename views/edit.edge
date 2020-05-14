@@ -1,3 +1,4 @@
+
 @layout('layouts.app')
  
 @section('content')
@@ -7,15 +8,15 @@
 
 <div class="container">
 <header>
-    <h1>Create New Post</h1>
+    <h1>Edit Post</h1>
 </header>
-     <form action="/posts/save" method="POST" encType="multipart/form-data">
+     <form action="/edit/{{ post._id}}" method="POST" encType="multipart/form-data">
       <div class="row">
           <div class="col-25">
             <label>Username</label>
           </div>
           <div class="col-75">
-            <input type="text" name="username" placeholder="Username">
+            <input type="text" name="username" value={{ post.username }}>
           </div>
       </div>
       <div class="row">
@@ -23,7 +24,7 @@
             <label>Title</label>
         </div>
         <div class="col-75">
-            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="title" value={{ post.title }}>
         </div>
        </div>
       <div class="row">
@@ -31,7 +32,7 @@
             <label>Description</label>
         </div>
         <div class="col-75">
-            <input type="text" name="description" placeholder="Description">
+            <input type="text" name="description" value="desc">
         </div>
         </div>
         <div class="row">
@@ -39,11 +40,11 @@
             <label>Content</label>
           </div>
           <div class="col-75">
-            <textarea name="content" placeholder="Content ..." cols="80" rows="30" ></textarea>
+            <textarea name="content" cols="80" rows="30">{{ post.content }}</textarea>
           </div>
         </div>
         <div>
-          <button class="btn">Create Post</button>
+          <button class="btn">Edit Post</button>
         </div> 
       </form>
 </div>
